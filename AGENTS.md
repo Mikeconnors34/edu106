@@ -28,10 +28,13 @@ When editing posts or templates, preserve these classes when they are relevant:
 - `u-url`
 - `u-uid`
 - `u-in-reply-to`
+- `u-bookmark-of`
 
 Every blog post should have a permalink (`u-url u-uid`), publication date (`dt-published`), title (`p-name`), content (`e-content`), and author (`p-author h-card`).
 
 Reply posts must also include `u-in-reply-to` pointing to the original post or page being answered.
+
+Bookmark posts must also include `u-bookmark-of` pointing to the resource being saved.
 
 ## When a student asks for a new post
 
@@ -47,6 +50,14 @@ Reply posts must also include `u-in-reply-to` pointing to the original post or p
 2. Replace the example target URL in `u-in-reply-to` with the URL the student is replying to.
 3. Keep the reply text inside `e-content`.
 4. Add the reply to the top of the feed in `index.html` with the same `u-in-reply-to` relationship.
+5. Do not remove the relationship markup just because the site is redesigned.
+
+## When a student asks for a bookmark post
+
+1. Copy the structure of `posts/bookmark-example.html`.
+2. Replace the example target URL in `u-bookmark-of` with the URL the student wants to save.
+3. Keep any note about the resource inside `e-content`.
+4. Add the bookmark to the top of the feed in `index.html` with the same `u-bookmark-of` relationship.
 5. Do not remove the relationship markup just because the site is redesigned.
 
 ## When a student asks to redesign the site
