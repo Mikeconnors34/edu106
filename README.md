@@ -37,6 +37,16 @@ Use `posts/reply-example.html` as the model. Ask Codex:
 
 Publishing `u-in-reply-to` makes the relationship machine-readable. A full IndieWeb reply workflow can also send a Webmention to the original site, but this static starter does not automatically send Webmentions.
 
+## Writing a bookmark post
+
+A bookmark post saves a resource on **your own site** and optionally adds a short note about why you saved it. The important Microformats2 property is `u-bookmark-of`, which points to the resource being bookmarked.
+
+Use `posts/bookmark-example.html` as the model. Ask Codex:
+
+> Create a bookmark post from `posts/bookmark-example.html`. I am bookmarking: PASTE-URL-HERE. Preserve `h-entry`, `u-bookmark-of`, `dt-published`, `e-content`, `p-author`, `u-url`, and `u-uid`. Add the bookmark to the top of the home-page feed. Do not add a framework or JavaScript.
+
+The note inside `e-content` can explain why the resource is useful, what you learned from it, or why you want to return to it later.
+
 ## Microformats used
 
 - `h-card` identifies the author/site owner.
@@ -49,6 +59,7 @@ Publishing `u-in-reply-to` makes the relationship machine-readable. A full Indie
 - `u-uid` identifies the canonical/permalink URL.
 - `p-author h-card` associates a post with its author.
 - `u-in-reply-to` identifies the URL that a reply post responds to.
+- `u-bookmark-of` identifies the URL saved by a bookmark post.
 
 Do not remove these classes when redesigning the site.
 
